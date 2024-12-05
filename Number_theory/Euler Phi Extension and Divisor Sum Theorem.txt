@@ -1,0 +1,40 @@
+Euler Phi Extension Theorem 
+
+Theorem: Given a number N, let d be a divisor of N. Then the number of pairs a,N, where 1≤a≤N and gcd( a , N ) = d,  is  ϕ( N / d ).
+N = 12
+gcd(4,12) = 4 , gcd(5,12) = 1 , gcd ( 6,12) = 6 , gcd ( 8,12) = 4 
+gcd( a , 12 ) = 4 
+=> ϕ ( 12/4) = 3 
+=> ϕ(3) = 2 , 2 টা  4 আছে যারা gcd হিসাবে 4 দিবে তাদের pari হল gcd(4,12) , gcd(8,12)
+
+1st : gcd(a,d) = d
+2nd : gcd ( a/d , d/d) = 1
+3rd :1 ≤ a / d ≤ N / d রেজ এর মদ্যে এ থাকবে 
+
+We will prove the theorem using Euler Phi Function and Arithmetic notion.
+
+We need to find the numbe of pairs {a,N} such that gcd(a,N) = d,  where 1 ≤ a ≤ N.
+
+Both a and N are divisible by d and d is the GCD. So, if we divide both a and N by d, then they will no longer have any common divisor.
+
+gcd(a / d, N / d ) = 1, where 1 ≤ a ≤ N.
+
+We know that the possible values of a lie in range 1 ≤ a ≤ N. What about the possible values of a / d ?  a / d must lie between 1 ≤ a / d≤ N /d otherwise a will cross its limit.
+
+Therefore, gcd(a,N) = d, where 1 ≤ a ≤ N is same as, gcd(a / d, N / d ) = 1, where 1 ≤ a / d ≤ N / d.
+
+So all we need to do is find the value of gcd(a / d, N / d) = 1, where 1 ≤ a / d ≤ N / d.
+
+Let N′ = N / d and  a′ = a / d. How many pairs of { a′ , N′ } are there such that gcd( a′, N′ ) = 1 and 1 ≤a′ ≤ N′ ?  Isn’t this what Euler Phi Function finds? The answer is ϕ (N′) = ϕ (N / d). 
+
+Euler Phi Divisor Sum Theorem
+Theorem: For a given integer N, the sum of Euler Phi of each of the divisors of N equals to N, i.e, N = ∑d  / N ϕ (d)
+যেমন : 
+ϕ (d1)  + ϕ (d2) + ϕ (d3) + ϕ (d4) = N 
+12 এর divisor গলা হল 1 , 2 , 3 , 4 , 6 , 12
+=> ϕ (1) + ϕ (2) + ϕ (3) + ϕ (4) + ϕ (6) + ϕ (12)
+=> 1 + 1 + 2 + 2 + 2 + 4 = 12 prove
+
+https://forthright48.com/euler-phi-extension-and-divisor-sum/
+
+
